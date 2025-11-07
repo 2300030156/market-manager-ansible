@@ -29,16 +29,16 @@ jobs:
       - name: Build and Push Backend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./market-backend
-          file: ./market-backend/backend.Dockerfile
+          context: ./market-springboot
+          file: ./market-springboot/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/market-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/market-springboot:latest
 
       # Step 5 — Build & Push Frontend Image
       - name: Build and Push Frontend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./market-frontend
-          file: ./market-frontend/frontend.Dockerfile
+          context: ./market-react
+          file: ./market-react/frontend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/market-frontend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/market-react:latest
